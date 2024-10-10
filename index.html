@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PCG</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/assets/css/pcg.css" rel="stylesheet">
 </head>
 <body>
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
-            <a class="navbar-brand" href="/">Unisantos</a>
+            <a class="navbar-brand" href="/"><img src="/assets/images/logo.png" alt="Logo"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -28,6 +29,9 @@
                         <a class="nav-link" href="/implantacao.html">Implantação</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="/consideracoes_finais.html">Considerações Finais</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="/creditos.html">Créditos</a>
                     </li>
                 </ul>
@@ -40,7 +44,7 @@
             <div class="row">
                 <div class="col-12">
                     <h1>Resumo</h1>
-                    <p>Coloquem aqui o resumo</p>
+                    <p>Uma crença popular é a de que crimes não costumam ocorrer em dias de chuva. Esse senso comum originou a ideia de realizar um estudo voltado para a segurança pública com base nas condições climáticas de uma região e as ocorrências policiais durante o decorrer do ano de 2023.</p>
                 </div>
             </div>
         </div>
@@ -50,55 +54,168 @@
             <div class="row">
                 <div class="col-12">
                     <h1>Introdução</h1>
-                    <p>Coloquem aqui a introdução</p>
+                    <p>Este trabalho tem como objetivo pesquisar a relação entre os índices pluviométricos e as ocorrências policiais no município de São Paulo, mais especificamente no bairro Interlagos. O tema é relevante devido à importância de compreender os possíveis impactos das condições climáticas na segurança pública urbana. A cidade de São Paulo é conhecida por sua extensão e densidade populacional, tornando um cenário ideal para explorar essa relação.</p>
                 </div>
             </div>
         </div>
     </section>
-    <section id="objetivos">
+    <section id="objetivo-geral">
         <div class="container">
             <div class="row">
-                <div class="col-md-6 col-12">
+                <div class="col-12">
                     <h1>Objetivo Geral</h1>
-                    <p>Coloquem aqui o objetivo geral</p>
-                </div>
-                <div class="col-md-6 col-12">
-                    <h1>Objetivos Específicos</h1>
-                    <p>Coloquem aqui os objetivos específicos</p>
+                    <p>O objetivo geral deste estudo é analisar se há uma associação entre os índices pluviométricos diários e o número de ocorrências registradas em São Paulo mensalmente. Pretende-se identificar se as variações nos padrões de precipitação podem influenciar os índices de criminalidade em áreas urbanas.</p>
                 </div>
             </div>
         </div>
     </section>
-    <section id="justificativa" class="bg-light">
+    <section id="objetivos-especificos" class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Objetivos Específicos</h1>
+                    <p>
+                        <ol>
+                            <li> Analisar os dados históricos de índices pluviométricos mensais na cidade de São Paulo ao longo de um período específico.</li>
+                            <li>Coletar e analisar dados estatísticos sobre ocorrências policiais no mesmo período e região.</li>
+                            <li>Investigar correlações estatísticas entre os índices pluviométricos e o número de ocorrências policiais em diferentes meses e bairros da cidade.</li>
+                            <li>Explorar possíveis explicações teóricas para qualquer associação encontrada entre clima e ocorrências policiais.</li>
+                        </ol>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="justificativa">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <h1>Justificativa</h1>
-                    <p>Coloquem aqui a justificativa</p>
+                    <p>A importância de compreender os fatores que podem influenciar as taxas de criminalidade em áreas urbanas justificam este estudo como um todo. Mudanças climáticas podem ter impactos não ambientais, mas também sociais, afetando a dinâmica da vida urbana e, potencialmente, os comportamentos policiais. Compreender como os padrões de chuva podem estar relacionados a ocorrências de roubos pode auxiliar.</p>
                 </div>
             </div>
         </div>
     </section>
-    <section id="metodologia">
+    <section id="metodologia" class="bg-light">
         <div class="container">
             <div class="row">
                 <div class="col-12">
                     <h1>Metodologia</h1>
-                    <p>Coloquem aqui a metodologia</p>
+                    <p>Coletaremos dados de índices pluviométricos mensais e registros de ocorrências de roubos em São Paulo. Os dados serão obtidos de fontes confiáveis, como o INMET1 para informações climáticas e a SSP-SP2 para dados criminais. Em seguida, faremos o pré-processamento dos datasets, limpando e formatando os dados conforme necessário. Utilizaremos Python com as bibliotecas: Pandas (usada para extrair o conteúdo XLSX3), Warnings (proíbe a exibição de mensagens de warnings), CSV4 (usada para extrair o conteúdo CSV), Matplotlib.pyplot (usada pra criação de gráfico), Matplotlib.ticker (define as etapas do eixo y, ou das ordenadas) e Numpy (usada pro cálculo de arranjo do gráfico). Realizaremos análises de correlação entre os índices pluviométricos e o número de ocorrências de roubos para identificar associações significativas. Os resultados serão interpretados considerando a literatura e serão visualizados através de gráficos e mapas para melhor compreensão dos padrões encontrados. Esta abordagem nos permitirá investigar de forma eficaz a possível relação entre condições climáticas e ocorrências policiais em São Paulo, contribuindo para discussões sobre segurança urbana na formulação de políticas públicas mais eficazes e na alocação de recursos para a segurança.</p>
                 </div>
             </div>
         </div>
     </section>
-    <section id="cronograma" class="bg-light">
+    <section id="cronograma">
+        <div class="container">
+            <h1>Cronograma</h1>
+            <table class="table table-bordered table-hover table-responsive-md">
+                <thead>
+                    <tr>
+                    <th scope="col">Etapa</th>
+                    <th scope="col">Abril</th>
+                    <th scope="col">Maio</th>
+                    <th scope="col">Junho</th>
+                    <th scope="col">Julho</th>
+                    <th scope="col">Agosto</th>
+                    <th scope="col">Setembro</th>
+                    <th scope="col">Outubro</th>
+                    <th scope="col">Novembro</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <th scope="row">Levantamento e Formulação da Pergunta de Pesquisa</th>
+                        <td class="center-bold">X</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Coleta e Pré-processamento de Dados</th>
+                        <td class="center-bold">X</td>
+                        <td class="center-bold">X</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Análise de Dados e Exploração Inicial</th>
+                        <td class="center-bold">X</td>
+                        <td class="center-bold">X</td>
+                        <td class="center-bold">X</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Correlação entre Índices Pluviométricos e Ocorrências Policiais</th>
+                        <td class="center-bold">X</td>
+                        <td class="center-bold">X</td>
+                        <td class="center-bold">X</td>
+                        <td class="center-bold">X</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Interpretação dos Resultados</th>
+                        <td></td>
+                        <td class="center-bold">X</td>
+                        <td></td>
+                        <td class="center-bold">X</td>
+                        <td class="center-bold">X</td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Discussão e Conclusões</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="center-bold">X</td>
+                        <td class="center-bold">X</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <th scope="row">Redação e Revisão do Relatório Final</th>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td class="center-bold">X</td>
+                        <td class="center-bold">X</td>
+                        <td class="center-bold">X</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <footer>
         <div class="container">
             <div class="row">
                 <div class="col-12">
-                    <h1>Cronograma</h1>
-                    <p>Coloquem aqui a tabela do cronograma</p>
+                    <span>Relação entre Índices Pluviométricos e Criminalidade na Capital de São Paulo</span>
                 </div>
             </div>
         </div>
-    </section>
+    </footer>
+
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </body>

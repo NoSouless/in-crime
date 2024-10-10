@@ -1,0 +1,76 @@
+.navbar-brand img {
+    max-height: 50px; /* Ajuste a altura conforme necessário */
+    max-width: 100px; /* Ajuste a largura conforme necessário */
+    width: auto;
+    height: auto;
+}
+
+.center-bold {
+    text-align: center;
+    font-weight: bold;
+}
+
+footer {
+    background-color: #f8f9fa;
+    padding: 20px 0;
+    text-align: center;
+}
+
+body {
+    background-color: #f0f8ff; /* Branco suave */
+    font-family: Arial, sans-serif;
+    color: #003366; /* Azul escuro para o texto */
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #005b96; /* Azul escuro */
+    color: white;
+    padding: 20px;
+    text-align: center;
+}
+
+nav {
+    background-color: #003366; /* Azul ainda mais escuro */
+    color: white;
+    padding: 10px;
+    text-align: center;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+}
+
+section {
+    padding: 20px;
+    text-align: justify;
+}
+
+footer {
+    background-color: #003366;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    /* position: fixed; */
+    bottom: 0;
+    width: 100%;
+}
+
+h1, h2 {
+    color: #005b96;
+}
+
+button {
+    background-color: #005b96; /* Azul no botão */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #003366;
+}
