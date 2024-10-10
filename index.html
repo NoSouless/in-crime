@@ -6,6 +6,10 @@
     <title>PCG</title>
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/css/pcg.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+    <script src="/assets/js/principal.js"></script>
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -36,6 +40,26 @@
             </ul>
         </div>
     </nav>
+    <section id="principal" class="bg-light">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <input type="file" id="excelFile" accept=".xlsx, .xls">
+                    <input type="file" id="csvFile" accept=".csv">
+                    <div id="rowSelector" style="display: none;">
+                        <label for="excelRow">Escolha um dado criminal:</label>
+                        <select id="excelRow"></select>
+                    </div>
+                    <div id="csvColumnSelector" style="display: none;">
+                        <label for="csvColumn">Escolha um dado climático:</label>
+                        <select id="csvColumn"></select>
+                    </div>
+                    <button id="generateChart" style="display: none;">Gerar Gráfico</button>
+                    <canvas id="myChart" width="400" height="200"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="esenvolvimento">
         <div class="container">
             <div class="row">
@@ -81,16 +105,6 @@
                         arquivo “INMET_SE_SP_A771_SAO PAULO -
                         INTERLAGOS_01-01-2023_A_31-12-2023.CSV”
                     </p>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section id="principal" class="bg-light">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h1>Principal</h1>
-                    <p>Coloquem aqui o programa principal</p>
                 </div>
             </div>
         </div>
