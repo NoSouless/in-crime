@@ -7,6 +7,66 @@
     <!-- direto do cdn -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/css/pcg.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f0f8ff; /* Branco suave */
+            font-family: Arial, sans-serif;
+            color: #003366; /* Azul escuro para o texto */
+            margin: 0;
+            padding: 0;
+        }
+        
+        header {
+            background-color: #005b96; /* Azul escuro */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        nav {
+            background-color: #003366; /* Azul ainda mais escuro */
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        
+        section {
+            padding: 20px;
+            text-align: justify;
+        }
+        
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        h1, h2 {
+            color: #005b96;
+        }
+
+        button {
+            background-color: #005b96; /* Azul no botão */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #003366;
+        }
+    </style>
 </head>
 <body>
 
@@ -44,8 +104,8 @@
                 <div class="col-12">
                     <h1>Referências bibliográficas</h1>
                     <ul>
-                        <li>INMET - Instituto Nacional de Meteorologia;São Paulo; [s.d]; ; https://portal.inmet.gov.br/dadoshistoricos; 25/04/2024</li>
-                        <li>Secretaria de Segurança Pública do Estado de São Paulo;São Paulo; [s.d]; https://www.ssp.sp.gov.br/estatistica/dados-mensais; 25/04/2024</li>
+                        <li>INMET - Instituto Nacional de Meteorologia;São Paulo; [s.d]; ; <a href="//portal.inmet.gov.br/dadoshistoricos">https://portal.inmet.gov.br/dadoshistoricos</a>; 25/04/2024</li>
+                        <li>Secretaria de Segurança Pública do Estado de São Paulo;São Paulo; [s.d]; <a href="//www.ssp.sp.gov.br/estatistica/dados-mensais">www.ssp.sp.gov.br/estatistica/dados-mensais</a>; 25/04/2024</li>
                     </ul>
                     </div>
             </div>
@@ -71,11 +131,21 @@
             <div class="row">
                 <div class="col-12">
                     <h1>GitHub</h1>
-                    <a href="https://github.com/NoSouless/in-crime" _blank"> Clique aqui >> https://github.com/NoSouless/in-crime</a>
+                    <a href="https://github.com/NoSouless/in-crime" _blank">https://github.com/NoSouless/in-crime</a>
                 </div>
             </div>
         </div>
     </section>
+    
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <span>Relação entre Índices Pluviométricos e Criminalidade na Capital de São Paulo</span>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <!-- direto do cdn -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
