@@ -1,0 +1,11 @@
+.navbar-brand img {
+    max-height: 50px; /* Ajuste a altura conforme necessário */
+    max-width: 100px; /* Ajuste a largura conforme necessário */
+    width: auto;
+    height: auto;
+}
+
+.center-bold {
+    text-align: center;
+    font-weight: bold;
+}
