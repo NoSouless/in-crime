@@ -112,3 +112,11 @@ button {
     margin: 20px 0;
     border-bottom: 1px solid #007bff;
 }
+
+.custom-file-label {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    display: inline-block;
+    width: 100%;
+}
