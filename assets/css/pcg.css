@@ -61,7 +61,7 @@ footer {
     width: 100%;
 }
 
-h1, h2 {
+h1, h2, h3 {
     color: #005b96;
 }
 
@@ -150,4 +150,11 @@ button {
 
 .image-container {
     flex-shrink: 0; 
+}
+
+.responsive-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; /* Centraliza a imagem horizontalmente */
 }

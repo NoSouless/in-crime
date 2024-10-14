@@ -32,9 +32,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="avaliacao.html">Avaliação</span></a>
                 </li>
-                <li class="nav-item">
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="leitura.html">Sobre</span></a>
-                </li>
+                </li> -->
                 <li class="nav-item">
                     <a class="nav-link" href="creditos.html">Créditos</a>
                 </li>
@@ -81,10 +81,27 @@
                         Para que um gráfico seja gerado, é necessário um arquivo Excel com os dados criminais (<a href="original/OcorrenciaMensal(Criminal)-101 DP - Jardim das Imbuias_20240522_191258.xlsx" target="_blank">OcorrenciaMensal(Criminal)-101 DP - Jardim das Imbuias_20240522_191258.xlsx</a>) e um arquivo CSV com os dados climáticos (<a href="original/INMET_SE_SP_A771_SAO PAULO - INTERLAGOS_01-01-2023_A_31-12-2023.CSV" target="_blank">INMET_SE_SP_A771_SAO PAULO - INTERLAGOS_01-01-2023_A_31-12-2023.CSV</a>). 
                         Após o upload dos arquivos, selecione a coluna do arquivo Excel e a linha do arquivo CSV que deseja comparar. 
                         Por fim, clique em "Gerar Gráfico" para visualizar a relação entre os dados.
-                        Originalmente, usamos os dados de 2023, mas você pode escolher qualquer ano.
                     </p>
+                    <h3>CSV</h3>
+                    <ul>
+                        <li>Os nomes das colunas devem estar na linha 9</li>
+                        <li>Os dados devem estar após a linha 9</li>
+                        <li>A primeira coluna deve ser a data</li>
+                        <li>A terceira coluna deve ser a quantidade de chuva</li>
+                        <li>O delimitador é ";"</li>
+                    </ul>
+                    <img src="assets/images/climatico.PNG" class="responsive-img"></img>
+                    <h3>Excel</h3>
+                    <ul>
+                        <li>A primeira linha deve ser a linha com os meses</li>
+                        <li>Cada coluna da primeira linha representa um mês</li>
+                        <li>A primeira coluna deve ser o tipo de crime</li>
+                        <li>Cada coluna da linha representa o total daquele tipo de crime naquele mês</li>
+                    </ul>
+                    <img src="assets/images/criminais.PNG" class="responsive-img"></img>
                     <p>
-                        
+                        Para que mais dados possam ser adquiridos, acesse <a href="https://portal.inmet.gov.br/dadoshistoricos" target="_blank">https://portal.inmet.gov.br/dadoshistoricos</a>
+                        para o arquivo CSV dos dados climáticos e <a href="https://www.ssp.sp.gov.br/estatistica/dados-mensais" target="_blank">https://www.ssp.sp.gov.br/estatistica/dados-mensais</a> para o arquivo Excel de dados criminais.
                     </p>
                 </div>
             </div>
