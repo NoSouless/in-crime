@@ -1,3 +1,11 @@
+body {
+    background-color: #f8f9fa; /* Branco suave */
+    font-family: 'Roboto', sans-serif;
+    color: #003366; /* Azul escuro para o texto */
+    margin: 0;
+    padding: 0;
+}
+
 .navbar-brand img {
     max-height: 50px; /* Ajuste a altura conforme necessário */
     max-width: 100px; /* Ajuste a largura conforme necessário */
@@ -16,13 +24,7 @@ footer {
     text-align: center;
 }
 
-body {
-    background-color: #f0f8ff; /* Branco suave */
-    font-family: Arial, sans-serif;
-    color: #003366; /* Azul escuro para o texto */
-    margin: 0;
-    padding: 0;
-}
+
 
 header {
     background-color: #005b96; /* Azul escuro */
@@ -32,10 +34,10 @@ header {
 }
 
 nav {
-    background-color: #003366; /* Azul ainda mais escuro */
     color: white;
     padding: 10px;
     text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 nav a {
@@ -73,6 +75,14 @@ button {
 
 button:hover {
     background-color: #003366;
+}
+
+
+.container {
+    background-color: #ffffff; 
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Sombra mais forte */
 }
 
 .chosen-container {
