@@ -4,10 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PCG</title>
-    <!-- direto do cdn -->
+    <!-- Bootstrap -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/css/pcg.css" rel="stylesheet">
-    <style>/* From Uiverse.io by aguerquin */ 
+    <style>
+      
         .button-icon {
           display: flex;
           border: 3px #fff solid;
@@ -15,32 +16,32 @@
           height: fit-content;
           cursor: pointer;
         }
-        
+
         .icon {
           background-color: #fff;
           padding: 10px 10px 5px 10px;
         }
-        
+
         .icon svg {
           width: 25px;
           height: 25px;
         }
-        
+
         .cube {
           transition: all 0.4s;
           transform-style: preserve-3d;
           width: 200px;
           height: 20px;
         }
-        
+
         .button-icon:hover {
           border-color: #222229;
         }
-        
+
         .button-icon:hover .cube {
           transform: rotateX(90deg);
         }
-        
+
         .side {
           position: absolute;
           height: 47px;
@@ -53,19 +54,53 @@
           letter-spacing: 0.5px;
           font-weight: bold;
         }
-        
+
         .top {
           background: #222229;
           color: #fff;
           transform: rotateX(-90deg) translate3d(0, 13.5px, 2em);
         }
-        
+
         .front {
           background: #222229;
           color: #fff;
           transform: translate3d(0, 0, 1em);
         }
-        </style>
+
+      
+        .reference-item {
+          text-align: center; 
+          margin-bottom: 20px;
+        }
+
+ 
+        .reference-item img {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-bottom: 10px;
+        }
+
+     
+        section {
+            padding: 30px 0; 
+        }
+
+        h1 {
+          margin-bottom: 20px;
+          font-size: 1.8em;
+          font-weight: bold;
+          text-transform: uppercase;
+        }
+
+        footer {
+          background-color: #222229;
+          color: #fff;
+          text-align: center;
+          padding: 10px;
+        }
+    </style>
 </head>
 <body>
 
@@ -76,81 +111,163 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-              <li class="nav-item">
-                <a class="nav-link active" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/avaliacao.html">Avaliação</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/implantacao.html">Implantação</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/leitura.html">Sobre</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="/creditos.html">Créditos</a>
-            </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/leitura.html">Leitura</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/avaliacao.html">Avaliação</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/implantacao.html">Implantação</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="/creditos.html">Créditos</a>
+                </li>
             </ul>
         </div>
     </nav>
+
+    <!-- References section -->
     <section id="referencias" class="bg-light">
         <div class="container">
+            <h1>Referências bibliográficas</h1>
             <div class="row">
-                <div class="col-12">
-                    <h1>Referências bibliográficas</h1>
-                    <ul>
-                        <li>INMET - Instituto Nacional de Meteorologia;São Paulo; [s.d]; ; <a href="//portal.inmet.gov.br/dadoshistoricos">https://portal.inmet.gov.br/dadoshistoricos</a>; 25/04/2024</li>
-                        <li>Secretaria de Segurança Pública do Estado de São Paulo;São Paulo; [s.d]; <a href="//www.ssp.sp.gov.br/estatistica/dados-mensais">www.ssp.sp.gov.br/estatistica/dados-mensais</a>; 25/04/2024</li>
-                    </ul>
-                    </div>
-            </div>
-        </div>
-    </section>
-    <section id="integrantes">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h1>Integrantes</h1>
-                    <ul>
-                    <li>Léo Caselato Vilaronga (<a href="https://github.com/NoSouless" target="_blank">NoSouless</a>)</li>
-                    <li>Felipe de Lima Monteiro (<a href="https://github.com/FelipepileF1001" target="_blank">LFelipepileF1001 - Lipe Monteiro</a>)</li>
-                    <li>Pablo da Silva Minhão (<a href="https://github.com/KuroVonEinzbern" target="_blank">KuroVonEinzbern - Tablito_o</a>)</li>
-                    <li>Gustavo da Silva Silvestre (<a href="https://github.com/TechGustKBT" target="_blank">TechGustKBT - Gustavo da Silva Silvestre</a>)</li>
-                </ul>
+                <div class="col-md-6 reference-item">
+                    <a href="https://portal.inmet.gov.br/dadoshistoricos" target="_blank">
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTe3B5SYorxObSzwRedRSct-SnR5RpvJbZByw&s" alt="INMET logo">
+                    </a>
+                    <p>INMET - Instituto Nacional de Meteorologia</p>
+                    <p><a href="https://portal.inmet.gov.br/dadoshistoricos" target="_blank">https://portal.inmet.gov.br/dadoshistoricos</a></p>
+                </div>
+                <div class="col-md-6 reference-item">
+                    <a href="https://www.ssp.sp.gov.br/estatistica/dados-mensais" target="_blank">
+                        <img src="https://pbs.twimg.com/profile_images/1634233380727566340/cV63e4qU_400x400.jpg" alt="SSP logo">
+                    </a>
+                    <p>Secretaria de Segurança Pública de São Paulo</p>
+                    <p><a href="https://www.ssp.sp.gov.br/estatistica/dados-mensais" target="_blank">https://www.ssp.sp.gov.br/estatistica/dados-mensais</a></p>
                 </div>
             </div>
         </div>
     </section>
+
+    <section id="integrantes">
+      <div class="container">
+          <h1>Integrantes e funções</h1>
+          <!-- Carousel wrapper -->
+          <div id="integrantesCarousel" class="carousel slide" data-ride="carousel">
+              <!-- Carousel indicators -->
+              <ol class="carousel-indicators">
+                  <li data-target="#integrantesCarousel" data-slide-to="0" class="active"></li>
+                  <li data-target="#integrantesCarousel" data-slide-to="1"></li>
+                  <li data-target="#integrantesCarousel" data-slide-to="2"></li>
+                  <li data-target="#integrantesCarousel" data-slide-to="3"></li>
+              </ol>
+  
+              <!-- Carousel items with image and text -->
+              <div class="carousel-inner">
+                  <!-- Colaborador 1 -->
+                  <div class="carousel-item active">
+                      <div class="row" style="background-color: #003366; color: white; padding: 20px; border-radius: 15px;">
+                          <div class="col-md-4 text-center">
+                              <img src="https://conteudo.imguol.com.br/c/entretenimento/a1/2021/01/14/dwayne-the-rock-johnson-1610629270810_v2_4x3.jpg" 
+                                  alt="Léo Caselato" class="rounded-circle" 
+                                  style="border: 5px solid #fff; width: 150px; height: 150px; object-fit: cover;">
+                          </div>
+                          <div class="col-md-8 d-flex flex-column justify-content-center">
+                              <h5>Léo Caselato</h5>
+                              <p>Curso: Ciências da Computação</p>
+                              <p>Função: Product Owner, Scrum Master, DEV e Administrador</p>
+                          </div>
+                      </div>
+                  </div>
+  
+                  <!-- Colaborador 2 -->
+                  <div class="carousel-item">
+                      <div class="row" style="background-color: #003366; color: white; padding: 20px; border-radius: 15px;">
+                          <div class="col-md-4 text-center">
+                              <img src="https://conteudo.imguol.com.br/c/entretenimento/a1/2021/01/14/dwayne-the-rock-johnson-1610629270810_v2_4x3.jpg" 
+                                  alt="Felipe Monteiro" class="rounded-circle" 
+                                  style="border: 5px solid #fff; width: 150px; height: 150px; object-fit: cover;">
+                          </div>
+                          <div class="col-md-8 d-flex flex-column justify-content-center">
+                              <h5>Felipe Monteiro</h5>
+                              <p>Curso: Engenharia de Software</p>
+                              <p>Função: Beta Tester</p>
+                          </div>
+                      </div>
+                  </div>
+  
+                  <!-- Colaborador 3 -->
+                  <div class="carousel-item">
+                      <div class="row" style="background-color: #003366; color: white; padding: 20px; border-radius: 15px;">
+                          <div class="col-md-4 text-center">
+                              <img src="https://conteudo.imguol.com.br/c/entretenimento/a1/2021/01/14/dwayne-the-rock-johnson-1610629270810_v2_4x3.jpg" 
+                                  alt="Pablo Minhão" class="rounded-circle" 
+                                  style="border: 5px solid #fff; width: 150px; height: 150px; object-fit: cover;">
+                          </div>
+                          <div class="col-md-8 d-flex flex-column justify-content-center">
+                              <h5>Pablo Minhão</h5>
+                              <p>Curso: Administração</p>
+                              <p>Função: Assistente de Operação</p>
+                          </div>
+                      </div>
+                  </div>
+  
+                  <!-- Colaborador 4 -->
+                  <div class="carousel-item">
+                      <div class="row" style="background-color: #003366; color: white; padding: 20px; border-radius: 15px;">
+                          <div class="col-md-4 text-center">
+                              <img src="https://conteudo.imguol.com.br/c/entretenimento/a1/2021/01/14/dwayne-the-rock-johnson-1610629270810_v2_4x3.jpg" 
+                                  alt="Gustavo Silvestre" class="rounded-circle" 
+                                  style="border: 5px solid #fff; width: 150px; height: 150px; object-fit: cover;">
+                          </div>
+                          <div class="col-md-8 d-flex flex-column justify-content-center">
+                              <h5>Gustavo Silvestre</h5>
+                              <p>Curso: Gestão de Projetos</p>
+                              <p>Função: Supervisor Geral</p>
+                          </div>
+                      </div>
+                  </div>
+              </div>
+  
+              <!-- Carousel controls -->
+              <a class="carousel-control-prev" href="#integrantesCarousel" role="button" data-slide="prev">
+                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Previous</span>
+              </a>
+              <a class="carousel-control-next" href="#integrantesCarousel" role="button" data-slide="next">
+                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                  <span class="sr-only">Next</span>
+              </a>
+          </div>
+      </div>
+  </section>
+
     <section id="github" class="bg-light">
         <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <h1>GitHub</h1>
-                    <div class="button-icon">
-                        <div class="icon">
-                          <svg viewBox="0 0 24 24">
-                            <path
-                              d="M12 0.296997C5.37 0.296997 0 5.67 0 12.297C0 17.6 3.438 22.097 8.205 23.682C8.805 23.795 9.025 23.424 9.025 23.105C9.025 22.82 9.015 22.065 9.01 21.065C5.672 21.789 4.968 19.455 4.968 19.455C4.422 18.07 3.633 17.7 3.633 17.7C2.546 16.956 3.717 16.971 3.717 16.971C4.922 17.055 5.555 18.207 5.555 18.207C6.625 20.042 8.364 19.512 9.05 19.205C9.158 18.429 9.467 17.9 9.81 17.6C7.145 17.3 4.344 16.268 4.344 11.67C4.344 10.36 4.809 9.29 5.579 8.45C5.444 8.147 5.039 6.927 5.684 5.274C5.684 5.274 6.689 4.952 8.984 6.504C9.944 6.237 10.964 6.105 11.984 6.099C13.004 6.105 14.024 6.237 14.984 6.504C17.264 4.952 18.269 5.274 18.269 5.274C18.914 6.927 18.509 8.147 18.389 8.45C19.154 9.29 19.619 10.36 19.619 11.67C19.619 16.28 16.814 17.295 14.144 17.59C14.564 17.95 14.954 18.686 14.954 19.81C14.954 21.416 14.939 22.706 14.939 23.096C14.939 23.411 15.149 23.786 15.764 23.666C20.565 22.092 24 17.592 24 12.297C24 5.67 18.627 0.296997 12 0.296997Z"
-                              fill="#222229"
-                            ></path>
-                          </svg>
-                        </div>
-                        <div class="cube">
-                          <span class="side front">GitHub</span>
-                          <span class="side top"><a href= "https://github.com/NoSouless/in-crime">NoSouless/in-crime</a></span>
-                        </div>
-                      </div>
-                     </div>
+            <h1>GitHub</h1>
+            <div class="button-icon">
+                <div class="icon">
+                  <svg viewBox="0 0 24 24">
+                    <path d="M12 0.296997C5.37 0.296997 0 5.67 0 12.297C0 17.6 3.438 22.097 8.205 23.682C8.805 23.795 9.025 23.424 9.025 23.105C9.025 22.82 9.015 22.065 9.01 21.065C5.672 21.789 4.968 19.455 4.968 19.455C4.422 18.07 3.633 17.7 3.633 17.7C2.546 16.956 3.717 16.971 3.717 16.971C4.922 17.055 5.555 18.207 5.555 18.207C6.625 20.042 8.364 19.512 9.05 19.205C9.158 18.429 9.467 17.9 9.81 17.6C7.145 17.3 4.344 16.268 4.344 11.67C4.344 10.36 4.809 9.29 5.579 8.45C5.444 8.147 5.039 6.927 5.684 5.274C5.684 5.274 6.689 4.952 8.984 6.504C9.944 6.237 10.964 6.105 11.984 6.099C13.004 6.105 14.024 6.237 14.984 6.504C17.264 4.952 18.269 5.274 18.269 5.274C18.914 6.927 18.509 8.147 18.389 8.45C19.154 9.29 19.619 10.36 19.619 11.67C19.619 16.28 16.814 17.295 14.144 17.59C14.564 17.95 14.954 18.686 14.954 19.81C14.954 21.416 14.939 22.706 14.939 23.096C14.939 23.411 15.149 23.786 15.764 23.666C20.565 22.092 24 17.592 24 12.297C24 5.67 18.627 0.296997 12 0.296997Z" fill="#222229"></path>
+                  </svg>
+                </div>
+                <div class="cube">
+                  <span class="side front">GitHub</span>
+                  <span class="side top"><a href= "https://github.com/NoSouless/in-crime">NoSouless/in-crime</a></span>
+                </div>
             </div>
         </div>
     </section>
-    
+
     <footer class="py-4">
         <span>Relação entre Índices Pluviométricos e Criminalidade na Capital de São Paulo</span>
     </footer>
 
-    <!-- direto do cdn -->
+    <!-- Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
 </body>
