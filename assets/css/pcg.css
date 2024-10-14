@@ -120,3 +120,24 @@ button {
     display: inline-block;
     width: 100%;
 }
+
+.reference-item {
+    text-align: center; 
+    margin-bottom: 20px;
+  }
+
+
+  .reference-item img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+
+  .provider-image {
+    max-width: 20px;
+    height: auto; 
+    margin-left: auto; 
+    vertical-align: middle; 
+}

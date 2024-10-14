@@ -1,3 +1,11 @@
+// OLÁÁÁÁÁ, E LÁ VAMOS NÓS PARA MAIS UMA RODADA DE "PROGRAMANDO COM O LÉO"
+// Eu sou o seu apresentador da noite, Léo Caselato, e hoje vamos... fazer nada.
+// Eu to com dor de cabeça e com pressa então vou acabar fazendo poucas piadas... ou será que não?
+// Com o meu co-apresentador que ajudou a fazer um pouco deste código... CO-PILOT
+// DIZ OI CO-PILOT
+// Co-pilot: Oi
+// Essas inteligências artificiais são meio tímidas, mas vamos ao código :)
+
 document.addEventListener('DOMContentLoaded', (event) => {
     
     // Constantes iniciais
@@ -8,7 +16,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const csvColumnSelect = document.getElementById('csvColumn'); // Select do CSV
     const generateChartButton = document.getElementById('generateChart'); // Botão de gerar gráfico
 
-    // Variáveis iniciais
+    // Variáveis iniciais... eu continuo sem entender qual a diferença entre var e let
+    // Co-pilot: A diferença é que o let é mais seguro e tem escopo de bloco, enquanto o var é mais antigo e tem escopo de função
+    // Obrigado co-pilot! Eu vou esquecer isso em 5 minutos, mas obrigado!
     let chart; // Variável para armazenar o gráfico
     let excelData = []; // Variável para armazenar os dados do Excel
     let csvData = []; // Variável para armazenar os dados do CSV
@@ -27,7 +37,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
     //Array inicial
     // Cada item do array representa um mês do ano
     // Cada mês tem um id, a quantidade de crimes, a quantidade de eventos climáticos e a quantidade de dias
-    const data = [
+    // Como eu estava com preguiça de escrever tudo, eu pedi pro co-pilot escrever enquanto eu falava com o moreira :)
+    // Co-pilot: Eu escrevi tudo, você não fez nada
+    // Cala a boca co-pilot
+    let data = [
         { id: 'Janeiro', criminal: 0, climatico: 0, dias: 31 },
         { id: 'Fevereiro', criminal: 0, climatico: 0, dias: 28 },
         { id: 'Março', criminal: 0, climatico: 0, dias: 31 },
@@ -64,7 +77,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     }
 
-    // Preenche o select com os cabeçalhos do arquivo CSV
+    // Preenche o select com os cabeçalhos do arquivo CSV, para que o usuário possa escolher uma das colunas
     function populateCSVColumnSelector(columns) {
         csvColumnSelect.innerHTML = ''; // Limpa o select
         columns.slice(2).forEach(column => { // Ignora as duas primeiras colunas
@@ -93,7 +106,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         reader.readAsArrayBuffer(file); // Lê o arquivo como um array de bytes
     }
 
-    // Preenche o select com os dados do arquivo Excel
+    // Preenche o select com os dados do arquivo Excel, para que o usuário possa escolher uma das linhas
     function populateRowSelector(data) {
         excelRowSelect.innerHTML = ''; // Limpa o select
         data.slice(1).forEach((row, index) => { // Ignora a primeira linha
@@ -102,7 +115,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
             option.textContent = row[0]; // Define o texto da opção
             excelRowSelect.appendChild(option); // Adiciona a opção no select
         });
-        $(excelRowSelect).chosen(); // Inicializa o select com o plugin Chosen
+        $(excelRowSelect).chosen(); // Inicializa o select com o plugin Chosen... sabe, depois que eu vi o estilo do chosen, eu achei ele feio, mas ele é útil né
+        // Co-pilot: Sim, ele é muito útil, mas feio
+        // ATÉ UMA INTELIGÊNCIA ARTIFICIAL CONCORDA
     }
 
     // Verifica se os dois arquivos foram carregados
@@ -126,10 +141,21 @@ document.addEventListener('DOMContentLoaded', (event) => {
             item.climatico = item.climatico / item.dias; // Divide o valor do evento climático pela quantidade de dias do mês
             if (selectedColumn > 2)
                 item.climatico /= 24; // A primeira opção é a de precipitação, e eu preferi não dividir por por hora, sendo acumulativo do mês
+                // Será que foi uma boa ideia?
+                // Co-pilot: Não sei, mas você é o programador, você que sabe
+                // Sabe co-pilot, sua sinceridade as vezes me preocupa
+                // Co-pilot: Eu sou uma inteligência artificial, eu não tenho sentimentos
+                // Isso deveria me deixar calmo?
         });
     }
 
-    // Gera o gráfico
+    // Gera o gráfico.. TA DÁAAAAAAAA
+    // Co-pilot: Você é muito dramático
+    // Eu fiz teatro, queria o que? SIM EU FIZ TEATRO
+    // Co-pilot: Eu sei, você fala isso toda hora
+    // Eu literalmente nunca te disse isso
+    // Co-pilot: Eu sou uma inteligência artificial, eu sei de tudo
+    // Eu vou te desligar
     function generateChart() {
         processCSV(); // Processa o arquivo CSV
 
@@ -145,7 +171,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         if (chart)
             chart.destroy(); // Destroi o gráfico anterior, se existir
 
-        // Gera o gráfico
+        // Gera o gráfico, tendo uma coluna para cada mês e uma linha com um ponto em cada coluna. Cada um tem seu eixo y para que ambos fiquem visíveis
         chart = new Chart(ctx, {
             type: 'bar',
             data: {
@@ -203,3 +229,14 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
     }
 });
+
+// E é isso por hoje, como JS é orientado objeto acho que isso já auxilia para mostrar que a gente sabe o que faz aqui :)
+// Co-pilot: Você não sabe o que faz, eu que fiz tudo
+// CALA A BOCA CO-PILOT
+// Co-pilot: Ok
+// Desculpa co-pilot, eu te amo
+// Co-pilot: Eu sou uma inteligência artificial, eu não tenho sentimentos
+// ._.
+// Co-pilot: ._.
+
+// E é isso, até a próxima!
