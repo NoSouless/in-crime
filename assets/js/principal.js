@@ -1,27 +1,32 @@
 document.addEventListener('DOMContentLoaded', (event) => {
-    const ctx = document.getElementById('myChart').getContext('2d');
-    const csvFileInput = document.getElementById('csvFile');
-    const excelFileInput = document.getElementById('excelFile');
-    const excelRowSelect = document.getElementById('excelRow');
-    const csvColumnSelect = document.getElementById('csvColumn');
-    const generateChartButton = document.getElementById('generateChart');
-    let chart;
-    let excelData;
-    let csvData = [];
-    let isCSVUploaded = false;
-    let isExcelUploaded = false;
+    
+    // Constantes iniciais
+    const ctx = document.getElementById('myChart').getContext('2d'); // Contexto do gráfico
+    const csvFileInput = document.getElementById('csvFile'); // Input do arquivo CSV
+    const excelFileInput = document.getElementById('excelFile'); // Input do arquivo Excel
+    const excelRowSelect = document.getElementById('excelRow'); // Select do Excel
+    const csvColumnSelect = document.getElementById('csvColumn'); // Select do CSV
+    const generateChartButton = document.getElementById('generateChart'); // Botão de gerar gráfico
 
-    $('.chosen').chosen();
+    // Variáveis iniciais
+    let chart; // Variável para armazenar o gráfico
+    let excelData = []; // Variável para armazenar os dados do Excel
+    let csvData = []; // Variável para armazenar os dados do CSV
+    let isCSVUploaded = false; // Variável para verificar se o CSV foi carregado
+    let isExcelUploaded = false; // Variável para verificar se o Excel foi carregado
 
+    // Adiciona evento de mudança para o input de arquivo, independente de qual for
     document.querySelectorAll('.custom-file-input').forEach(function(input) {
-        input.addEventListener('change', function (e) {
-            var fileName = e.target.files[0].name;
-            var nextSibling = e.target.nextElementSibling;
-            nextSibling.innerText = fileName;
+        input.addEventListener('change', function (e) { // Adiciona evento de mudança para o input de arquivo
+            var fileName = e.target.files[0].name; // Pega o nome do arquivo
+            var nextSibling = e.target.nextElementSibling; // Pega o próximo elemento (No caso tem que ser a label)
+            nextSibling.innerText = fileName; // Muda o texto da label para o nome do arquivo
         });
     });
 
-    // Exemplo de dados
+    //Array inicial
+    // Cada item do array representa um mês do ano
+    // Cada mês tem um id, a quantidade de crimes, a quantidade de eventos climáticos e a quantidade de dias
     const data = [
         { id: 'Janeiro', criminal: 0, climatico: 0, dias: 31 },
         { id: 'Fevereiro', criminal: 0, climatico: 0, dias: 28 },
@@ -37,109 +42,110 @@ document.addEventListener('DOMContentLoaded', (event) => {
         { id: 'Dezembro', criminal: 0, climatico: 0, dias: 31 }
     ];
 
-    csvFileInput.addEventListener('change', handleCSVFile);
-    excelFileInput.addEventListener('change', handleExcelFile);
-    generateChartButton.addEventListener('click', generateChart);
+    // Adiciona eventos para os inputs de arquivo e botão de gerar gráfico
+    csvFileInput.addEventListener('change', handleCSVFile); // Adiciona evento de mudança para o input de arquivo CSV
+    excelFileInput.addEventListener('change', handleExcelFile); // Adiciona evento de mudança para o input de arquivo Excel
+    generateChartButton.addEventListener('click', generateChart); // Adiciona evento de clique para o botão de gerar gráfico
 
+    // Manipular o arquivo CSV
     function handleCSVFile(event) {
-        const file = event.target.files[0];
+        const file = event.target.files[0]; // Pega o arquivo
         Papa.parse(file, {
-            delimiter: ';',
-            skipEmptyLines: true,
-            complete: function(results) {
-                const allData = results.data;
-                const headers = allData[8]; // Pega a nona linha como cabeçalho
-                csvData = allData.slice(9); // Pula as 8 primeiras linhas
-                populateCSVColumnSelector(headers);
-                isCSVUploaded = true;
-                checkFilesUploaded();
+            delimiter: ';', // Delimitador do arquivo, no caso ponto e vírgula
+            skipEmptyLines: true, // Ignora linhas vazias
+            complete: function(results) { // Função que é chamada quando o arquivo é lido
+                let allData = results.data; // Pega todos os dados do arquivo
+                let headers = allData[8]; // Pega os cabeçalhos do arquivo (No caso, a linha 9)
+                csvData = allData.slice(9); // Pega os dados do arquivo (A partir da linha 10)
+                populateCSVColumnSelector(headers); // Preenche o select com os cabeçalhos
+                isCSVUploaded = true; // Marca que o arquivo foi carregado
+                checkFilesUploaded(); // Verifica se os dois arquivos foram carregados
             }
         });
     }
 
+    // Preenche o select com os cabeçalhos do arquivo CSV
     function populateCSVColumnSelector(columns) {
-        csvColumnSelect.innerHTML = '';
+        csvColumnSelect.innerHTML = ''; // Limpa o select
         columns.slice(2).forEach(column => { // Ignora as duas primeiras colunas
-            const option = document.createElement('option');
-            option.value = columns.indexOf(column);
-            option.textContent = column;
-            csvColumnSelect.appendChild(option);
+            let option = document.createElement('option'); // Cria uma nova opção
+            option.value = columns.indexOf(column); // Define o valor da opção
+            option.textContent = column; // Define o texto da opção
+            csvColumnSelect.appendChild(option); // Adiciona a opção no select
         });
-        csvColumnSelect.style.display = 'block';
-        $(csvColumnSelect).chosen();
+        $(csvColumnSelect).chosen(); // Inicializa o select com o plugin Chosen
     }
 
+    // Manipular o arquivo Excel
     function handleExcelFile(event) {
-        const file = event.target.files[0];
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            const data = new Uint8Array(e.target.result);
-            const workbook = XLSX.read(data, {type: 'array'});
-            const firstSheetName = workbook.SheetNames[0];
-            const worksheet = workbook.Sheets[firstSheetName];
-            excelData = XLSX.utils.sheet_to_json(worksheet, {header: 1});
-            populateRowSelector(excelData);
-            isExcelUploaded = true;
-            checkFilesUploaded();
+        let file = event.target.files[0]; // Pega o arquivo
+        let reader = new FileReader(); // Cria um novo leitor de arquivo
+        reader.onload = function(e) { // Função que é chamada quando o arquivo é lido
+            let data = new Uint8Array(e.target.result); // Pega os dados do arquivo
+            let workbook = XLSX.read(data, {type: 'array'}); // Lê o arquivo
+            let firstSheetName = workbook.SheetNames[0]; // Pega o nome da primeira planilha
+            let worksheet = workbook.Sheets[firstSheetName]; // Pega a primeira planilha
+            excelData = XLSX.utils.sheet_to_json(worksheet, {header: 1}); // Converte a planilha para JSON
+            populateRowSelector(excelData); // Preenche o select com os dados do Excel
+            isExcelUploaded = true; // Marca que o arquivo foi carregado
+            checkFilesUploaded(); // Verifica se os dois arquivos foram carregados
         };
-        reader.readAsArrayBuffer(file);
+        reader.readAsArrayBuffer(file); // Lê o arquivo como um array de bytes
     }
 
+    // Preenche o select com os dados do arquivo Excel
     function populateRowSelector(data) {
-        excelRowSelect.innerHTML = '';
-        data.slice(1).forEach((row, index) => {
-            const option = document.createElement('option');
-            option.value = index + 1;
-            option.textContent = row[0]; // Supondo que a primeira coluna é a categoria
-            excelRowSelect.appendChild(option);
+        excelRowSelect.innerHTML = ''; // Limpa o select
+        data.slice(1).forEach((row, index) => { // Ignora a primeira linha
+            let option = document.createElement('option'); // Cria uma nova opção
+            option.value = index + 1; // Define o valor da opção
+            option.textContent = row[0]; // Define o texto da opção
+            excelRowSelect.appendChild(option); // Adiciona a opção no select
         });
-        excelRowSelect.style.display = 'block';
-        $(excelRowSelect).chosen();
+        $(excelRowSelect).chosen(); // Inicializa o select com o plugin Chosen
     }
 
+    // Verifica se os dois arquivos foram carregados
     function checkFilesUploaded() {
-        if (isCSVUploaded && isExcelUploaded) {
-            generateChartButton.style.display = 'block';
-        }
+        if (isCSVUploaded && isExcelUploaded)
+            generateChartButton.style.display = 'block'; // Mostra o botão de gerar gráfico, apenas quando ambos os arquivos foram carregados
     }
 
+    // Processa o arquivo CSV, foi necessária uma função separada por ser muito mais complexa
     function processCSV() {
-        const selectedColumn = csvColumnSelect.value;
+        let selectedColumn = csvColumnSelect.value; // Pega o valor do select
         csvData.forEach(row => {
-            let dateParts = row[0].split('/');
-            let month = parseInt(dateParts[1]) - 1;
-            let climatico = row[selectedColumn].replace(',', '.');
-            if (climatico === '') {
-                climatico = 0;
-            }
-            data[month].climatico += parseFloat(climatico);
+            let dateParts = row[0].split('/'); // Divide a data em partes
+            let month = parseInt(dateParts[1]) - 1; // Pega o mês da data
+            let climatico = row[selectedColumn].replace(',', '.'); // Pega o valor do evento climático
+            if (climatico === '')
+                climatico = 0; // Se o valor for vazio, define como 0
+            data[month].climatico += parseFloat(climatico); // Soma o valor do evento climático
         });
         data.forEach(item => {
-            item.climatico = item.climatico / item.dias;
-            if (selectedColumn > 2) {
-                item.climatico /= 24;
-            }
+            item.climatico = item.climatico / item.dias; // Divide o valor do evento climático pela quantidade de dias do mês
+            if (selectedColumn > 2)
+                item.climatico /= 24; // A primeira opção é a de precipitação, e eu preferi não dividir por por hora, sendo acumulativo do mês
         });
     }
 
+    // Gera o gráfico
     function generateChart() {
-        processCSV();
+        processCSV(); // Processa o arquivo CSV
 
-        const selectedRowIndex = parseInt(excelRowSelect.value);
-        const selectedRow = excelData[selectedRowIndex];
-
-        data.forEach((item, index) => {
-            item.criminal = selectedRow[index + 1]; // Ignora a primeira coluna
+        let selectedRowIndex = parseInt(excelRowSelect.value); // Pega o valor do select
+        let selectedRow = excelData[selectedRowIndex]; // Pega a linha selecionada
+        data.forEach((item, index) => { // Para cada mês
+            item.criminal = selectedRow[index + 1]; // Pega o valor do crime
         });
+        let labels = data.map(item => item.id); // Pega os rótulos
+        let criminalData = data.map(item => item.criminal); // Pega os dados criminais
+        let climaticoData = data.map(item => item.climatico); // Pega os dados climáticos
 
-        const labels = data.map(item => item.id);
-        const criminalData = data.map(item => item.criminal);
-        const climaticoData = data.map(item => item.climatico);
+        if (chart)
+            chart.destroy(); // Destroi o gráfico anterior, se existir
 
-        if (chart) {
-            chart.destroy();
-        }
-
+        // Gera o gráfico
         chart = new Chart(ctx, {
             type: 'bar',
             data: {
@@ -172,9 +178,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         ticks: {
                             beginAtZero: true,
                             callback: function(value) {
-                                if (Number.isInteger(value)) {
-                                    return value;
-                                }
+                                if (Number.isInteger(value)) return value;
                                 return null;
                             }
                         },
