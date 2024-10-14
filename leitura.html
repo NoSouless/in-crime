@@ -7,6 +7,8 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/css/pcg.css" rel="stylesheet">
 </head>
+
+
 <body>
         <!-- Navbar -->
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -45,12 +47,15 @@
                 <div class="col-12">
                     <h2>Resumo</h2>
                     <p>Uma crença popular é a de que crimes não costumam ocorrer em dias de chuva. Esse senso comum originou a ideia de realizar um estudo voltado para a segurança pública com base nas condições climáticas de uma região e as ocorrências policiais durante o decorrer do ano de 2023.</p>
+                    <img src="https://imagens.ebc.com.br/RPTzMmwLm5AY37rIKjITQgogL20=/1170x700/smart/https://agenciabrasil.ebc.com.br/sites/default/files/thumbnails/image/2024/10/09/0d7a1737.jpg?itok=ouyZR-Xy" class="img-fluid my-3">
                 </div>
             </div>
             <div class="row divider" id="introducao">
                 <div class="col-12">
                     <h2>Introdução</h2>
                     <p>Este trabalho tem como objetivo pesquisar a relação entre os índices pluviométricos e as ocorrências policiais no município de São Paulo, mais especificamente no bairro Interlagos. O tema é relevante devido à importância de compreender os possíveis impactos das condições climáticas na segurança pública urbana. A cidade de São Paulo é conhecida por sua extensão e densidade populacional, tornando um cenário ideal para explorar essa relação.</p>
+                    <img src="https://imoveis.estadao.com.br/wp-content/uploads/2020/11/Interlagos-Getty-Images.jpg" class="img-fluid my-3">
+
                 </div>
             </div>
             <div class="row divider" id="objetivo-geral">
@@ -60,18 +65,22 @@
                 </div>
             </div>
             <div class="row divider" id="objetivos-especificos">
-                <div class="col-12">
-                    <h2>Objetivos Específicos</h2>
-                    <p>
+                <div class="col-12 d-flex justify-content-between align-items-start">
+                    <div class="content">
+                        <h2>Objetivos Específicos</h2>
                         <ol>
-                            <li> Analisar os dados históricos de índices pluviométricos mensais na cidade de São Paulo ao longo de um período específico.</li>
-                            <li>Coletar e analisar dados estatísticos sobre ocorrências policiais no mesmo período e região.</li>
-                            <li>Investigar correlações estatísticas entre os índices pluviométricos e o número de ocorrências policiais em diferentes meses e bairros da cidade.</li>
-                            <li>Explorar possíveis explicações teóricas para qualquer associação encontrada entre clima e ocorrências policiais.</li>
+                            <li>Analisar dados de chuva em São Paulo.</li>
+                            <li>Coletar dados de crimes no mesmo período e região.</li>
+                            <li>Identificar correlações entre chuvas e crimes.</li>
+                            <li>Explorar teorias que expliquem possíveis associações.</li>
                         </ol>
-                    </p>
+                    </div>
+                    <div class="image-container">
+                        <img src="https://ideogram.ai/assets/image/lossless/response/Vv3vyLdMTKSRoZjzEMt4mQ" alt="Ilustração" class="img-fluid small-image">
+                    </div>
                 </div>
             </div>
+            
             <div class="row divider" id="justificativa">
                 <div class="col-12">
                     <h2>Justificativa</h2>
@@ -81,7 +90,8 @@
             <div class="row divider" id="metodologia">
                 <div class="col-12">
                     <h2>Metodologia</h2>
-                    <p>Coletaremos dados de índices pluviométricos mensais e registros de ocorrências de roubos em São Paulo. Os dados serão obtidos de fontes confiáveis, como o INMET1 para informações climáticas e a SSP-SP2 para dados criminais. Em seguida, faremos o pré-processamento dos datasets, limpando e formatando os dados conforme necessário. Utilizaremos Python com as bibliotecas: Pandas (usada para extrair o conteúdo XLSX3), Warnings (proíbe a exibição de mensagens de warnings), CSV4 (usada para extrair o conteúdo CSV), Matplotlib.pyplot (usada pra criação de gráfico), Matplotlib.ticker (define as etapas do eixo y, ou das ordenadas) e Numpy (usada pro cálculo de arranjo do gráfico). Realizaremos análises de correlação entre os índices pluviométricos e o número de ocorrências de roubos para identificar associações significativas. Os resultados serão interpretados considerando a literatura e serão visualizados através de gráficos e mapas para melhor compreensão dos padrões encontrados. Esta abordagem nos permitirá investigar de forma eficaz a possível relação entre condições climáticas e ocorrências policiais em São Paulo, contribuindo para discussões sobre segurança urbana na formulação de políticas públicas mais eficazes e na alocação de recursos para a segurança.</p>
+                    <p>O estudo investiga a correlação entre índices pluviométricos e ocorrências de roubos em São Paulo, utilizando dados de fontes como o INMET (clima) e SSP-SP (crime). Após limpar e processar os dados, será realizada uma análise de correlação, visualizada em gráficos. O uso de bibliotecas Python, como Pandas, Numpy e Matplotlib, permitirá a visualização e compreensão de possíveis padrões. Esse estudo visa contribuir para políticas públicas mais eficientes em segurança urbana, considerando o impacto das condições climáticas nas ocorrências criminais.</p>
+                    <img src="/assets/images/Gráfico Sobre.png" class="img-fluid my-3">
                 </div>
             </div>
             <div class="row divider" id="cronograma">
@@ -149,8 +159,8 @@
                             <tr>
                                 <th scope="row">Interpretação dos Resultados</th>
                                 <td></td>
-                                <td class="center-bold">X</td>
                                 <td></td>
+                                <td class="center-bold">X</td>
                                 <td class="center-bold">X</td>
                                 <td class="center-bold">X</td>
                                 <td></td>
@@ -186,9 +196,8 @@
             <div class="row" id="consideracoes-finais">
                 <div class="col-12">
                     <h2>Considerações Finais</h2>
-                    <p>O estudo da relação entre os índices pluviométricos e ocorrências de roubos na cidade de São Paulo é fundamental para compreender como as condições climáticas impactam a segurança pública em uma cidade tão grande. Ao investigar essa relação, é possível desenvolver estratégias eficazes para combater o crime, adaptando operações de segurança pública às previsões meteorológicas e compreendendo os fatores que influenciam o comportamento criminoso e a dinâmica urbana de uma forma mais precisa.</p>
-                    <p>Os dados disponibilizados pela SSP-SP não são tão detalhados, sendo agrupados apenas por ano ou por mês, diferentes dos dados da INMET que são disponibilizados por dia, possuindo até diferentes horas do dia, resultando em um possível dado que pode ser considerado insatisfatório, pela falta de exatidão fornecida pela Secretaria de Segurança Pública do Estado. Uma possível revisão deste estudo com dados mais detalhados, isso sendo, quantidade de boletins de ocorrência registrados por dia e por hora, seria um estudo interessante de ser realizado. </p>
-                </div>
+                    <p>A relação entre índices pluviométricos e roubos em São Paulo pode ajudar a entender o impacto do clima na segurança pública. Embora os dados da SSP-SP sejam agrupados mensalmente, enquanto os do INMET são mais detalhados (diários), a análise sugere que dados mais precisos poderiam enriquecer o estudo, como boletins diários ou por hora. Isso abriria portas para uma revisão mais detalhada e precisa da dinâmica criminal na cidade.</p>
+                   </div>
             </div>
         </div>
     </section>

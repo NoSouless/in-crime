@@ -141,3 +141,13 @@ button {
     margin-left: auto; 
     vertical-align: middle; 
 }
+
+.small-image {
+    width: 150px; 
+    height: auto; 
+    margin-left: 20px; 
+}
+
+.image-container {
+    flex-shrink: 0; 
+}
