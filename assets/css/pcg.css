@@ -74,3 +74,22 @@ button {
 button:hover {
     background-color: #003366;
 }
+
+.chosen-container {
+    width: 100% !important;
+}
+
+.chosen-container .chosen-single {
+    padding: 10px 1%;
+    width: 100% !important;
+}
+
+.chosen-container .chosen-drop {
+    width: 100% !important;
+}
+
+.chosen-container .chosen-search input[type='text'] {
+    padding: 2px 4% !important;
+    width: 90% !important;
+    margin: 5px 2%;
+}

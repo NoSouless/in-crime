@@ -2,8 +2,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const ctx = document.getElementById('myChart').getContext('2d');
     const csvFileInput = document.getElementById('csvFile');
     const excelFileInput = document.getElementById('excelFile');
-    const rowSelector = document.getElementById('rowSelector');
-    const csvColumnSelector = document.getElementById('csvColumnSelector');
     const excelRowSelect = document.getElementById('excelRow');
     const csvColumnSelect = document.getElementById('csvColumn');
     const generateChartButton = document.getElementById('generateChart');
@@ -12,6 +10,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
     let csvData = [];
     let isCSVUploaded = false;
     let isExcelUploaded = false;
+
+    $('.chosen').chosen();
+
+    document.querySelectorAll('.custom-file-input').forEach(function(input) {
+        input.addEventListener('change', function (e) {
+            var fileName = e.target.files[0].name;
+            var nextSibling = e.target.nextElementSibling;
+            nextSibling.innerText = fileName;
+        });
+    });
 
     // Exemplo de dados
     const data = [
@@ -57,7 +65,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
             option.textContent = column;
             csvColumnSelect.appendChild(option);
         });
-        csvColumnSelector.style.display = 'block';
+        csvColumnSelect.style.display = 'block';
+        $(csvColumnSelect).chosen();
     }
 
     function handleExcelFile(event) {
@@ -84,7 +93,8 @@ document.addEventListener('DOMContentLoaded', (event) => {
             option.textContent = row[0]; // Supondo que a primeira coluna é a categoria
             excelRowSelect.appendChild(option);
         });
-        rowSelector.style.display = 'block';
+        excelRowSelect.style.display = 'block';
+        $(excelRowSelect).chosen();
     }
 
     function checkFilesUploaded() {
@@ -96,13 +106,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
     function processCSV() {
         const selectedColumn = csvColumnSelect.value;
         csvData.forEach(row => {
-            const dateParts = row[0].split('/');
-            const month = parseInt(dateParts[1]) - 1;
-            row[selectedColumn] = row[selectedColumn].replace(',', '.');
-            data[month].climatico += parseFloat(row[selectedColumn]);
+            let dateParts = row[0].split('/');
+            let month = parseInt(dateParts[1]) - 1;
+            let climatico = row[selectedColumn].replace(',', '.');
+            if (climatico === '') {
+                climatico = 0;
+            }
+            data[month].climatico += parseFloat(climatico);
         });
         data.forEach(item => {
-            item.climatico = item.climatico / item.dias / 24;
+            item.climatico = item.climatico / item.dias;
+            if (selectedColumn > 2) {
+                item.climatico /= 24;
+            }
         });
     }
 
@@ -124,8 +140,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
             chart.destroy();
         }
 
-        console.log(data);
-
         chart = new Chart(ctx, {
             type: 'bar',
             data: {
@@ -135,29 +149,49 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         label: 'Criminal',
                         data: criminalData,
                         type: 'line',
-                        borderColor: 'rgba(75, 192, 192, 1)',
+                        backgroundColor: 'rgba(192, 75, 75, 1)',
+                        borderColor: 'rgba(192, 75, 75, 1)',
                         borderWidth: 1,
-                        fill: false
+                        yAxisID: 'y-axis-1'
                     },
                     {
                         label: 'Climático',
                         data: climaticoData,
-                        backgroundColor: 'rgba(192, 75, 75, 1)',
-                        borderWidth: 1
+                        backgroundColor: 'rgba(75, 192, 192, 1)',
+                        borderColor: 'rgba(75, 192, 192, 1)',
+                        borderWidth: 1,
+                        yAxisID: 'y-axis-2'
                     }
                 ]
             },
             options: {
                 scales: {
-                    y: {
+                    'y-axis-1': {
+                        type: 'linear',
+                        position: 'left',
                         ticks: {
-                            stepSize: 10 // Ajuste conforme necessário
+                            beginAtZero: true,
+                            callback: function(value) {
+                                if (Number.isInteger(value)) {
+                                    return value;
+                                }
+                                return null;
+                            }
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Dados Criminais'
                         }
                     },
-                    x: {
+                    'y-axis-2': {
+                        type: 'linear',
+                        position: 'right',
                         ticks: {
-                            maxRotation: 45, // Rotaciona os rótulos do eixo x
-                            minRotation: 45
+                            beginAtZero: true
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Dados Climáticos'
                         }
                     }
                 }
