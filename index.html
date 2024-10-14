@@ -41,86 +41,88 @@
             </ul>
         </div>
     </nav>
-    <section id="content" class="container my-4">
-        <div class="main-title">
-            <h1>Relação entre Índices Pluviométricos e Criminalidade na Capital de São Paulo</h1>
-        </div>
+    <section id="content" class="my-4">
+        <div class="container">
+            <div class="main-title">
+                <h1>Relação entre Índices Pluviométricos e Criminalidade na Capital de São Paulo</h1>
+            </div>
 
-        <div id="principal" class="row divider">
-            <div class="col-12">
-                <div id="rowSelector" class="input-group my-3">
-                    <input type="file" id="excelFile" accept=".xlsx, .xls" class="custom-file-input">
-                    <label for="excelFile" class="custom-file-label" id="criminalLabel">Escolha um dado criminal (Excel):</label>
+            <div id="principal" class="row divider">
+                <div class="col-12">
+                    <div id="rowSelector" class="input-group my-3">
+                        <input type="file" id="excelFile" accept=".xlsx, .xls" class="custom-file-input">
+                        <label for="excelFile" class="custom-file-label" id="criminalLabel">Escolha um dado criminal (Excel):</label>
+                    </div>
+                    
+                    <div id="csvColumnSelector" class="input-group">
+                        <input type="file" id="csvFile" accept=".csv" class="custom-file-input">
+                        <label for="csvFile" class="custom-file-label" id="climaticoLabel">Escolha um dado climático (CSV):</label>
+                    </div>
+                    <div class="my-3">
+                        <select id="excelRow" class="form-control">
+                            <option>Faça upload dos dados criminais</option>
+                        </select>
+                    </div>
+                    <div class="my-3">
+                        <select id="csvColumn" class="form-control">
+                            <option>Faça upload dos dados climáticos</option>
+                        </select>
+                    </div>
+                    <div class="d-flex justify-content-end my-3">
+                        <button id="generateChart" class="btn btn-primary" style="display: none;">Gerar Gráfico</button>
+                    </div>
+                    <canvas id="myChart" width="400" height="200"></canvas>
                 </div>
-                
-                <div id="csvColumnSelector" class="input-group">
-                    <input type="file" id="csvFile" accept=".csv" class="custom-file-input">
-                    <label for="csvFile" class="custom-file-label" id="climaticoLabel">Escolha um dado climático (CSV):</label>
-                </div>
-                <div class="my-3">
-                    <select id="excelRow" class="form-control">
-                        <option>Faça upload dos dados criminais</option>
-                    </select>
-                </div>
-                <div class="my-3">
-                    <select id="csvColumn" class="form-control">
-                        <option>Faça upload dos dados climáticos</option>
-                    </select>
-                </div>
-                <div class="d-flex justify-content-end my-3">
-                    <button id="generateChart" class="btn btn-primary" style="display: none;">Gerar Gráfico</button>
-                </div>
-                <canvas id="myChart" width="400" height="200"></canvas>
             </div>
-        </div>
-        <div id="desenvolvimento" class="row divider">
-            <div class="col-12">
-                <h1>Desenvolvimento</h1>
-                <p>
-                    A pesquisa envolve a análise de dados meteorológicos e a realização de 
-                    estudos de caso em áreas específicas da cidade, oferecendo potencial para uma 
-                    percepção mais aprofundada no planejamento e implementação de políticas de 
-                    segurança pública mais eficazes.
-                </p>
-                <p>
-                O dataset “OcorrenciaMensal(Criminal)-101 DP - Jardim das
-                Imbuias_20240425_223341.xlsx” dataset contém em XLSX, todas as ocorrências 
-                policiais do 101º DP - Jardim das Imbuias, a delegacia de polícia do bairro de 
-                Interlagos. Fornecido pela Secretaria de Segurança Pública do Estado de São Paulo 
-                (SSP-SP), este dataset contém 14 colunas e 24 linhas. Na primeira linha, assim como 
-                na primeira coluna, são dados de texto (string), enquanto todas as outras são inteiros. 
-                Cada coluna representa um mês de 2023, enquanto cada linha representa a natureza 
-                de um crime realizado. Dentre as colunas nós temos:
-                </p>
-                <ul>
-                    <li>Data;</li>
-                    <li>Hora UTC;</li>
-                    <li>PRECIPITAÇÃO TOTAL, HORÁRIO (mm);</li>
-                    <li>PRESSAO ATMOSFERICA AO NIVEL DA ESTACAO, HORARIA (mB);</li>
-                    <li>PRESSÃO ATMOSFERICA MAX.NA HORA ANT. (AUT) (mB);</li>
-                    <li>PRESSÃO ATMOSFERICA MIN. NA HORA ANT. (AUT) (mB);</li>
-                    <li>RADIACAO GLOBAL (Kj/m²);</li>
-                    <li>TEMPERATURA DO AR - BULBO SECO, HORARIA (°C);</li>
-                    <li>TEMPERATURA DO PONTO DE ORVALHO (°C);</li>
-                    <li>TEMPERATURA MÁXIMA NA HORA ANT. (AUT) (°C);</li>
-                    <li>TEMPERATURA MÍNIMA NA HORA ANT. (AUT) (°C);</li>
-                    <li>UMIDADE RELATIVA DO AR, HORARIA (%);</li>
-                    <li>VENTO, DIREÇÃO HORARIA (gr) (° (gr));</li>
-                    <li>VENTO, RAJADA MAXIMA (m/s);</li>
-                    <li>VENTO, VELOCIDADE HORARIA (m/s).</li>
-                </ul>
-                <p>
-                    O dataset está disponibilizado em https://portal.inmet.gov.br/dadoshistoricos ao 
-                    selecionar “ANO 2023 (AUTOMÁTICA)”, descompactar o zip fornecido e selecionar o 
-                    arquivo “INMET_SE_SP_A771_SAO PAULO -
-                    INTERLAGOS_01-01-2023_A_31-12-2023.CSV”
-                </p>
+            <div id="desenvolvimento" class="row divider">
+                <div class="col-12">
+                    <h1>Desenvolvimento</h1>
+                    <p>
+                        A pesquisa envolve a análise de dados meteorológicos e a realização de 
+                        estudos de caso em áreas específicas da cidade, oferecendo potencial para uma 
+                        percepção mais aprofundada no planejamento e implementação de políticas de 
+                        segurança pública mais eficazes.
+                    </p>
+                    <p>
+                    O dataset “OcorrenciaMensal(Criminal)-101 DP - Jardim das
+                    Imbuias_20240425_223341.xlsx” dataset contém em XLSX, todas as ocorrências 
+                    policiais do 101º DP - Jardim das Imbuias, a delegacia de polícia do bairro de 
+                    Interlagos. Fornecido pela Secretaria de Segurança Pública do Estado de São Paulo 
+                    (SSP-SP), este dataset contém 14 colunas e 24 linhas. Na primeira linha, assim como 
+                    na primeira coluna, são dados de texto (string), enquanto todas as outras são inteiros. 
+                    Cada coluna representa um mês de 2023, enquanto cada linha representa a natureza 
+                    de um crime realizado. Dentre as colunas nós temos:
+                    </p>
+                    <ul>
+                        <li>Data;</li>
+                        <li>Hora UTC;</li>
+                        <li>PRECIPITAÇÃO TOTAL, HORÁRIO (mm);</li>
+                        <li>PRESSAO ATMOSFERICA AO NIVEL DA ESTACAO, HORARIA (mB);</li>
+                        <li>PRESSÃO ATMOSFERICA MAX.NA HORA ANT. (AUT) (mB);</li>
+                        <li>PRESSÃO ATMOSFERICA MIN. NA HORA ANT. (AUT) (mB);</li>
+                        <li>RADIACAO GLOBAL (Kj/m²);</li>
+                        <li>TEMPERATURA DO AR - BULBO SECO, HORARIA (°C);</li>
+                        <li>TEMPERATURA DO PONTO DE ORVALHO (°C);</li>
+                        <li>TEMPERATURA MÁXIMA NA HORA ANT. (AUT) (°C);</li>
+                        <li>TEMPERATURA MÍNIMA NA HORA ANT. (AUT) (°C);</li>
+                        <li>UMIDADE RELATIVA DO AR, HORARIA (%);</li>
+                        <li>VENTO, DIREÇÃO HORARIA (gr) (° (gr));</li>
+                        <li>VENTO, RAJADA MAXIMA (m/s);</li>
+                        <li>VENTO, VELOCIDADE HORARIA (m/s).</li>
+                    </ul>
+                    <p>
+                        O dataset está disponibilizado em https://portal.inmet.gov.br/dadoshistoricos ao 
+                        selecionar “ANO 2023 (AUTOMÁTICA)”, descompactar o zip fornecido e selecionar o 
+                        arquivo “INMET_SE_SP_A771_SAO PAULO -
+                        INTERLAGOS_01-01-2023_A_31-12-2023.CSV”
+                    </p>
+                </div>
             </div>
-        </div>
-        <div id="lgpd" class="row">
-            <div class="col-12">
-                <h1>LGPD</h1>
-                <p>Implementamos os padrões ISO 27001 para garantir a integridade e precisão dos dados. Nossos dados são anonimizados e não incluem dados sensíveis sobre indivíduos nos dados utilizados, assegurando a proteção das informações coletadas.</p>
+            <div id="lgpd" class="row">
+                <div class="col-12">
+                    <h1>LGPD</h1>
+                    <p>Implementamos os padrões ISO 27001 para garantir a integridade e precisão dos dados. Nossos dados são anonimizados e não incluem dados sensíveis sobre indivíduos nos dados utilizados, assegurando a proteção das informações coletadas.</p>
+                </div>
             </div>
         </div>
     </section>
