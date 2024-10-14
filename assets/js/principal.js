@@ -140,8 +140,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
             chart.destroy();
         }
 
-        console.log(data);
-
         chart = new Chart(ctx, {
             type: 'bar',
             data: {
@@ -172,7 +170,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         type: 'linear',
                         position: 'left',
                         ticks: {
-                            beginAtZero: true
+                            beginAtZero: true,
+                            callback: function(value) {
+                                if (Number.isInteger(value)) {
+                                    return value;
+                                }
+                                return null;
+                            }
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Dados Criminais'
                         }
                     },
                     'y-axis-2': {
@@ -180,6 +188,10 @@ document.addEventListener('DOMContentLoaded', (event) => {
                         position: 'right',
                         ticks: {
                             beginAtZero: true
+                        },
+                        scaleLabel: {
+                            display: true,
+                            labelString: 'Dados Climáticos'
                         }
                     }
                 }
