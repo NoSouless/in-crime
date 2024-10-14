@@ -7,6 +7,16 @@
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="/assets/css/pcg.css" rel="stylesheet">
     <style>
+        html, body {
+            height: 100%; /* Faz o body ocupar 100% da altura */
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+
         .container {
             background-color: #ffffff; 
             padding: 30px;
@@ -19,18 +29,19 @@
             font-size: 28px; 
             font-weight: 600; 
             margin-bottom: 30px;
-            border-bottom: 2px solid #007bff; /* Linha abaixo do título */
+            border-bottom: 2px solid #003366; /* Linha abaixo do título */
             padding-bottom: 10px;
         }
 
         footer {
-            background-color: #003366; /* Fundo azul */
+            background-color: #003366;
             padding: 20px 0;
-            color: #ffffff; /* Cor do texto branco */
+            color: #ffffff;
             text-align: center;
-            position: relative; 
-            bottom: 0;
             width: 100%;
+            margin-top: auto; 
+            position: fixed;
+            bottom: 0;
         }
 
         footer span {
@@ -39,8 +50,7 @@
 
         h2 {
             margin-top: 30px; 
-            border-bottom: 1px solid #e0e0e0; 
-            padding-bottom: 10px;
+            padding-bottom: 10px; /* Removido o traço abaixo do título */
         }
 
         ul {
@@ -75,6 +85,9 @@
                     <a class="nav-link active" href="/implantacao.html">Implantação</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="/consideracoes_finais.html">Considerações Finais</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="/creditos.html">Créditos</a>
                 </li>
             </ul>
@@ -90,19 +103,21 @@
             <div class="row">
                 <div class="col-12">
                     <h2>Como Colocar o Site no Ar</h2>
-                    <p>Para colocar o site no ar, seguimos estas etapas simples:</p>
+                    <p>Para garantir que nosso site esteja acessível ao público, seguiremos um planejamento estruturado em várias etapas:</p>
                     <ul>
-                        <li>Registrar um nome de domínio.</li>
-                        <li>Escolher um serviço de hospedagem.</li>
-                        <li>Fazer o upload dos arquivos do site para o servidor.</li>
-                        <li>Configurar o domínio para apontar para o servidor.</li>
-                        <li>Testar o site para garantir que tudo funcione corretamente.</li>
+                        <li><strong>Registrar um Nome de Domínio:</strong> Escolheremos um nome que represente bem o nosso projeto e que seja fácil de lembrar.</li>
+                        <li><strong>Selecionar um Provedor de Hospedagem:</strong> Optaremos por um provedor confiável, avaliando opções como <em>HostGator, Bluehost e DigitalOcean</em>, considerando capacidade de armazenamento, largura de banda e suporte técnico.</li>
+                        <li><strong>Fazer o Upload dos Arquivos:</strong> Transferiremos todos os arquivos do nosso site para o servidor de hospedagem utilizando um cliente FTP, como o FileZilla.</li>
+                        <li><strong>Configurar o Domínio:</strong> Após o upload, configuraremos o domínio para apontar para o servidor onde o site está hospedado.</li>
+                        <li><strong>Testar o Site:</strong> Realizaremos testes para garantir que todas as funcionalidades estejam operando corretamente e que o site seja responsivo.</li>
                     </ul>
-                    <p>Essas etapas garantem que o site esteja acessível ao público.</p>
+                    <p>Essas etapas são essenciais para assegurar que o nosso site funcione de forma eficiente e esteja sempre disponível aos usuários.</p>
                 </div>
             </div>
         </div>
     </section>
+    
+  
 
     <footer class="py-4">
         <span>Relação entre Índices Pluviométricos e Criminalidade na Capital de São Paulo</span>
